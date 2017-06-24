@@ -1,21 +1,25 @@
+// business logic section
 var answer = function(lastNumber) {
   var result= [];
-    for (var a = 1; a <= lastNumber; a++) {
-      if ((a % 15 === 0) && (a % 5 === 0) && (a % 3 === 0)){
-    result.push("pingpong");
+  for (var a = 1; a <= lastNumber; a++) {
+    if ((a % 15 === 0) && (a % 5 === 0) && (a % 3 === 0)){
+      result.push("pingpong");
+
+    }
+      else if (a % 3 === 0){
+        result.push("ping");
+    }
+      else if (a % 5 === 0){
+        result.push("pong");
+    }
+      else {
+        result.push(a);
+    }
   }
-  else if (a % 3 === 0){
-    result.push("ping");
-  }
-  else if (a % 5 === 0){
-    result.push("pong");
-  }
-  else {
-    result.push(a);
-  }
-}
 return result;
 };
+
+// user interface logic
 
 $(document).ready(function() {
   $("form#placeHolder").submit(function(event) {
@@ -23,8 +27,8 @@ $(document).ready(function() {
   var numberEntered = parseInt($("input#numeral").val());
   var output = answer(numberEntered);
   var lastOutput = numberEntered - 1;
-    for (var a = 0; a <= lastOutput; a++) {
-      $("#result ul").append("<li>" + output[a] + "</li>");
-    }
+  for (var a = 0; a <= lastOutput; a++) {
+    $("#result ul").append("<li>" + output[a] + "</li>");
+  }
  });
 });

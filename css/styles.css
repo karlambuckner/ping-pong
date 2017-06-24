@@ -1,0 +1,26 @@
+h1 {
+  text-align: center;
+}
+
+img {
+  border-radius: 20%;
+}
+
+.jumbotron {
+  color: #000099;
+}
+
+h2 {
+  text-align: center;
+  color: #000099;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+blockquote {
+  background-color: #000099;
+  color: white;
+}
