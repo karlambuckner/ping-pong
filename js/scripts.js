@@ -1,27 +1,30 @@
-var answer = function(numeral) {
-  if ((numeral % 15 === 0) && (numeral % 5 === 0) && (numeral % 3 === 0)){
-    return "pingpong";
+var answer = function(lastNumber) {
+  var result= [];
+    for (var a = 1; a <= lastNumber; a++) {
+      if ((a % 15 === 0) && (a % 5 === 0) && (a % 3 === 0)){
+    result.push("pingpong");
   }
-  else if (numeral % 3 === 0){
-    return "ping";
+  else if (a % 3 === 0){
+    result.push("ping");
   }
-  else if (numeral % 5 === 0){
-    return "pong";
+  else if (a % 5 === 0){
+    result.push("pong");
   }
   else {
-    return numeral;
+    result.push(a);
   }
-
+}
+return result;
 };
 
 $(document).ready(function() {
   $("form#placeHolder").submit(function(event) {
   event.preventDefault();
-  var numeral = parseInt($("input#numeral").val());
-  var result = answer(numeral);
-  var outputs = [result];
-  outputs.forEach(function(output) {
-    $("#result ul").append("<li>" + output + "</li>");
-  })
+  var numberEntered = parseInt($("input#numeral").val());
+  var output = answer(numberEntered);
+  var lastOutput = numberEntered - 1;
+    for (var a = 0; a <= lastOutput; a++) {
+      $("#result ul").append("<li>" + output[a] + "</li>");
+    }
  });
 });
