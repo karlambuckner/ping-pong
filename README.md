@@ -31,7 +31,7 @@ _This game takes a number entered by the user and determines if it is divisible 
 
 ## Setup/Installation Requirements
 
-* _Open link in browser: https://karlambuckner.github.io/pingpong/
+* Open link in browser: https://karlambuckner.github.io/pingpong/
 
 ## Known Bugs
 
